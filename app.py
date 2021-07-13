@@ -1,9 +1,13 @@
-from flask import Flask, request
+import sys
+
+from flask import Flask, request, logging
 from flask_restful import Resource, Api, reqparse
 import ast
 import trans
 app = Flask(__name__)
 api = Api(app)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 
 @app.route('/')
