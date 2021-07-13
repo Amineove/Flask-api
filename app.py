@@ -5,7 +5,7 @@ import ast
 import trans
 import logging
 app = Flask(__name__)
-api = Api(app)
+
 
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
