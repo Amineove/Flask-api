@@ -2,13 +2,15 @@ import pandas as pd
 
 en_to_ar={
     "start": {
-        "2": ["أ", "إ", "ء", "آ", "ؤ", "ئ", "ق"],
-        "3": ["ع"],
-        "5": ["خ"],
-        "6": ["ط"],
-        "7": ["ح"],
-        "8": ["ق"],
-        "9": ["ق"],
+        "1": ["1"],
+        "2": ["أ","2", "إ", "ء", "آ"],
+        "3": ["ع","3"],
+        "4":["4"],
+        "5": ["خ","5"],
+        "6": ["6"],
+        "7": ["ح","7"],
+        "8": ["8","ق"],
+        "9": ["9","ق"],
         "2a": ["أ"],
         "2e": ["ء"],
         "2i": ["إ"],
@@ -245,13 +247,15 @@ en_to_ar={
         "zu": ["ز", "ذ", "ظ"]
     },
     "other": {
-        "2": ["أ", "إ", "ء", "آ", "ؤ", "ئ"],
-        "3": ["ع"],
-        "5": ["خ"],
-        "6": ["ط"],
-        "7": ["ح"],
-        "8": ["ق"],
-        "9": ["ق"],
+        "1": ["1"],
+        "2": ["أ","2", "إ", "ء", "آ", "ؤ", "ئ", "ق"],
+        "3": ["ع","3"],
+        "4":["4"],
+        "5": ["خ","5"],
+        "6": ["ط","6"],
+        "7": ["ح","7"],
+        "8": ["8","ق"],
+        "9": ["9","ق"],
         "2a": ["أ"],
         "2e": ["ء"],
         "2i": ["إ"],
@@ -311,7 +315,7 @@ en_to_ar={
         "9i": ["ص", "ق"],
         "9o": ["ص", "ق"],
         "9u": ["ص", "ق"],
-        "a": ["ه", "ى", "ي", "ا", "ة"],
+        "a": [ "ا", "ة"],
         "ah": ["ه", "ة"],
         "ai": ["ى", "ي", "ي"],
         "ao": ["ه", "ي", "ة"],
@@ -539,23 +543,31 @@ def transliterate_word(english):
 
   recur(english, '', True)
   return ret
+
+nbr=[]
+for i in range(18,78):
+    nbr=nbr+[str(i)]
+
 stemm=pd.read_excel('New_Stemming.xlsx')
 stemmin=stemm['نصايب'].tolist()+stemm['نصاوب'].tolist()+stemm['نصوب'].tolist()+stemm['نصيب'].tolist()+stemm['نسايب'].tolist()+stemm['نسيب'].tolist()+stemm['نساوب'].tolist()+stemm['نسوب'].tolist()+stemm['Unnamed: 8'].tolist()+stemm['Unnamed: 9'].tolist()+stemm['Unnamed: 10'].tolist()+stemm['Unnamed: 11'].tolist()+stemm['Unnamed: 12'].tolist()+stemm['Unnamed: 13'].tolist()+stemm['Unnamed: 14'].tolist()+stemm['Unnamed: 15'].tolist()+stemm['Unnamed: 16'].tolist()+stemm['Unnamed: 17'].tolist()+stemm['Unnamed: 18'].tolist()
 stemming = [x for x in stemmin if pd.isnull(x) == False]
-stemming=stemming+['نصايب','نصاوب','نصوب','نصيب','نسايب','نسيب','نساوب','نسوب']
+stemming=stemming+['نصايب','نصاوب','نصوب','نصيب','نسايب','نسيب','نساوب','نسوب']+nbr
 noise=pd.read_excel('new_noise.xlsx')
 noise=noise[0].tolist()
-words=noise+stemming
 def transliterate_ar(eng):
     k=[]
     s=transliterate_word(eng)
     s = list(s)
     for i in s:
-        if i in words:
+        if i in stemming:
             k=k+[i]
-    if k==[]:
+    if len(k)==0:
+        for i in s:
+            if i in noise:
+                k = k + [i]
+    if len(k)==0:
         k=s
-    return k[0]
+    return k[-1]
 
 
 def transliterate(sentence):
