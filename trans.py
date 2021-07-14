@@ -557,9 +557,9 @@ for i in range(18,78):
 stemm=pd.read_excel('New_Stemming.xlsx')
 stemmin=stemm['نصايب'].tolist()+stemm['نصاوب'].tolist()+stemm['نصوب'].tolist()+stemm['نصيب'].tolist()+stemm['نسايب'].tolist()+stemm['نسيب'].tolist()+stemm['نساوب'].tolist()+stemm['نسوب'].tolist()+stemm['Unnamed: 8'].tolist()+stemm['Unnamed: 9'].tolist()+stemm['Unnamed: 10'].tolist()+stemm['Unnamed: 11'].tolist()+stemm['Unnamed: 12'].tolist()+stemm['Unnamed: 13'].tolist()+stemm['Unnamed: 14'].tolist()+stemm['Unnamed: 15'].tolist()+stemm['Unnamed: 16'].tolist()+stemm['Unnamed: 17'].tolist()+stemm['Unnamed: 18'].tolist()
 stemming = [x for x in stemmin if pd.isnull(x) == False]
-stemming=stemming+['نصايب','نصاوب','نصوب','نصيب','نسايب','نسيب','نساوب','نسوب']+nbr
+stemming=stemming+['نصايب','نصاوب','نصوب','نصيب','نسايب','نسيب','نساوب','نسوب']
 noise=pd.read_excel('new_noise.xlsx')
-noise=noise[0].tolist()
+noise=noise[0].tolist()++nbr
 def transliterate_ar(eng):
     k=[]
     s=transliterate_word(eng)
