@@ -539,11 +539,11 @@ def transliterate_word(english):
 
   recur(english, '', True)
   return ret
-stemm=pd.read_excel('C:/Users/asus/Documents/New_Stemming.xlsx')
+stemm=pd.read_excel('New_Stemming.xlsx')
 stemmin=stemm['نصايب'].tolist()+stemm['نصاوب'].tolist()+stemm['نصوب'].tolist()+stemm['نصيب'].tolist()+stemm['نسايب'].tolist()+stemm['نسيب'].tolist()+stemm['نساوب'].tolist()+stemm['نسوب'].tolist()+stemm['Unnamed: 8'].tolist()+stemm['Unnamed: 9'].tolist()+stemm['Unnamed: 10'].tolist()+stemm['Unnamed: 11'].tolist()+stemm['Unnamed: 12'].tolist()+stemm['Unnamed: 13'].tolist()+stemm['Unnamed: 14'].tolist()+stemm['Unnamed: 15'].tolist()+stemm['Unnamed: 16'].tolist()+stemm['Unnamed: 17'].tolist()+stemm['Unnamed: 18'].tolist()
 stemming = [x for x in stemmin if pd.isnull(x) == False]
 stemming=stemming+['نصايب','نصاوب','نصوب','نصيب','نسايب','نسيب','نساوب','نسوب']
-noise=pd.read_excel('C:/Users/asus/Documents/new_noise.xlsx')
+noise=pd.read_excel('new_noise.xlsx')
 noise=noise[0].tolist()
 words=noise+stemming
 def transliterate_ar(eng):
