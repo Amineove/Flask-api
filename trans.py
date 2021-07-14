@@ -559,7 +559,7 @@ stemmin=stemm['نصايب'].tolist()+stemm['نصاوب'].tolist()+stemm['نصو�
 stemming = [x for x in stemmin if pd.isnull(x) == False]
 stemming=stemming+['نصايب','نصاوب','نصوب','نصيب','نسايب','نسيب','نساوب','نسوب']
 noise=pd.read_excel('new_noise.xlsx')
-noise=noise[0].tolist()++nbr
+noise=noise[0].tolist()+nbr
 def transliterate_ar(eng):
     k=[]
     s=transliterate_word(eng)
