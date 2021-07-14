@@ -567,7 +567,7 @@ def transliterate_ar(eng):
                 k = k + [i]
     if len(k)==0:
         k=s
-    return k[-1]
+    return k[0]
 
 
 def transliterate(sentence):
