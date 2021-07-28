@@ -4,6 +4,7 @@ from flask_restful import Resource, Api, reqparse
 import ast
 import trans
 import logging
+
 app = Flask(__name__)
 
 
