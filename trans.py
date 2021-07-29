@@ -1,4 +1,5 @@
 import pandas as pd
+from langdetect import detect
 
 en_to_ar={
     "start": {
@@ -563,19 +564,22 @@ stemming=stemming+['نصايب','نصاوب','نصوب','نصيب','نسايب',
 noise=pd.read_excel('new_noise.xlsx')
 noise=noise[0].tolist()+nbr
 def transliterate_ar(eng):
-    k=[]
-    s=transliterate_word(eng)
-    s = list(s)
-    for i in s:
-        if i in stemming:
-            k=k+[i]
-    if len(k)==0:
+    if detect(eng)== 'ar':
+        return eng
+    else:
+        k=[]
+        s=transliterate_word(eng)
+        s = list(s)
         for i in s:
-            if i in noise:
-                k = k + [i]
-    if len(k)==0:
-        k=s
-    return k[0]
+            if i in stemming:
+                k=k+[i]
+        if len(k)==0:
+            for i in s:
+                if i in noise:
+                    k = k + [i]
+        if len(k)==0:
+            k=s
+        return k[0]
 
 
 def transliterate(sentence):
