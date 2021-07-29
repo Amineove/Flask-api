@@ -1,5 +1,4 @@
 import pandas as pd
-from langdetect import detect
 
 en_to_ar={
     "start": {
@@ -580,9 +579,9 @@ def transliterate_ar(eng):
 
 
 def transliterate(sentence):
-        words = sentence.split()
-        klma = ''
-        for word in words:
-            klma = klma + transliterate_ar(word) + ' '
+    words = sentence.split()
+    klma = ''
+    for word in words:
+        klma = klma + transliterate_ar(word) + ' '
 
-        return klma
+    return klma

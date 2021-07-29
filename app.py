@@ -4,7 +4,6 @@ from flask_restful import Resource, Api, reqparse
 import ast
 import trans
 import logging
-
 app = Flask(__name__)
 
 
@@ -19,6 +18,7 @@ def index():
 @app.route('/courses/<string:word>',methods=['GET'])
 def get_word(word):
     mot = trans.transliterate(word)
+
     return {'mot':mot}
 
 
