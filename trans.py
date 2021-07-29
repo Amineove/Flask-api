@@ -580,9 +580,6 @@ def transliterate_ar(eng):
 
 
 def transliterate(sentence):
-    if detect(sentence)== 'ar':
-        return sentence
-    else:
         words = sentence.split()
         klma = ''
         for word in words:

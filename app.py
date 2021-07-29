@@ -19,7 +19,6 @@ def index():
 @app.route('/courses/<string:word>',methods=['GET'])
 def get_word(word):
     mot = trans.transliterate(word)
-
     return {'mot':mot}
 
 
