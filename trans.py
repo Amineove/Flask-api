@@ -568,6 +568,7 @@ def transliterate_ar(eng):
         return eng
     else:
         k=[]
+        eng=eng.lower()
         s=transliterate_word(eng)
         s = list(s)
         for i in s:
