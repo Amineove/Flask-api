@@ -566,7 +566,7 @@ noise=noise[0].tolist()+nbr
 def transliterate_ar(eng):
     if detect(eng)== 'ar':
         return eng
-    elif eng=='compte':
+    elif eng in ['compte','comte']:
         return 'كونط'
     else:
         k=[]
