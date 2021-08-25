@@ -564,13 +564,21 @@ stemming=stemming+['نصايب','نصاوب','نصوب','نصيب','نسايب',
 noise=pd.read_excel('new_noise.xlsx')
 noise=noise[0].tolist()+nbr
 def transliterate_ar(eng):
+    eng = eng.lower()
     if detect(eng)== 'ar':
         return eng
     elif eng in ['compte','comte']:
         return 'كونط'
+    elif eng in ['carte','cartes']:
+        return 'كارط'
+    elif eng in ['offre','offres']:
+        return 'عروض'
+    elif eng in ['service','services']:
+        return 'خدمات'
+    elif eng in ['documents','document']:
+        return 'الوثائق'
     else:
         k=[]
-        eng=eng.lower()
         s=transliterate_word(eng)
         s = list(s)
         for i in s:
