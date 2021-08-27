@@ -73,6 +73,7 @@ en_to_ar={
         "9o": ["ص", "ق"],
         "9u": ["ص", "ق"],
         "a": ["ا", "أ"],
+        "aa":["ع"],
         "b": ["ب"],
         "ba": ["ب"],
         "be": ["ب"],
@@ -122,7 +123,7 @@ en_to_ar={
         "ghi": ["غ"],
         "gho": ["غ"],
         "ghu": ["غ"],
-        "h": ["ه"],
+        "h": ["ح","ه"],
         "ha": ["ه"],
         "he": ["ه"],
         "hi": ["ه"],
@@ -322,6 +323,7 @@ en_to_ar={
         "9o": ["ص", "ق"],
         "9u": ["ص", "ق"],
         "a": ["أ","ا", "ة"],
+        "aa":["ع"],
         "ah": ["ه", "ة"],
         "ai": ["ى", "ي", "ي"],
         "ao": ["ه", "ي", "ة"],
@@ -569,13 +571,13 @@ def transliterate_ar(eng):
         return eng
     elif eng in ['compte','comte']:
         return 'كونط'
-    elif eng in ['carte','cartes']:
+    elif eng in ['carte','cartes','la carte','les cartes']:
         return 'كارط'
-    elif eng in ['offre','offres']:
+    elif eng in ['offre','offres','les offres']:
         return 'عروض'
-    elif eng in ['service','services']:
+    elif eng in ['service','services','le service','les services']:
         return 'خدمات'
-    elif eng in ['documents','document']:
+    elif eng in ['documents','document','les documents']:
         return 'الوثائق'
     else:
         k=[]
