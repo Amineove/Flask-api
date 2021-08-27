@@ -579,6 +579,16 @@ def transliterate_ar(eng):
         return 'خدمات'
     elif eng in ['documents','document','les documents']:
         return 'الوثائق'
+    elif eng in ['condition', 'conditions','les condtions']:
+        return 'الشروط'
+    elif eng in ['operation','operations','les operations']:
+        return 'المعاملات'
+    elif eng in ['agence','agences','les agences']:
+        return 'اجونس'
+    elif eng in ['telephone']:
+        return ' تليفون '
+    elif eng in ["white"]:
+        return 'وايت'
     else:
         k=[]
         s=transliterate_word(eng)
