@@ -651,6 +651,8 @@ def transliterate_ar(eng):
         return 'الخطوات'
     elif eng in ['Music','music']:
         return 'ميوزك'
+    elif eng in ['le','la','les','un','une','des']:
+        return ''
     else:
         k=[]
         s=transliterate_word(eng)
