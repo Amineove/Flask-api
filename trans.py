@@ -587,8 +587,70 @@ def transliterate_ar(eng):
         return 'اجونس'
     elif eng in ['telephone']:
         return ' تليفون '
-    elif eng in ["white"]:
+    elif eng in ["white","White"]:
         return 'وايت'
+    elif eng in ['passeport']:
+        return 'باسبور'
+    elif eng in ['permis']:
+        return ' ببيرمي'
+    elif eng in ['espece','espéce','espéces','espéce']:
+        return 'إيسبيس'
+    elif eng in ['adresse','l\'adresse']:
+        return 'العنوان'
+    elif eng in ['radio','Radio']:
+        return 'راديو'
+    elif eng in ['conseiller','conseillers']:
+        return 'مستشار'
+    elif eng in ['application','l\'application']:
+        return 'تطبيق'
+    elif eng in ['vintage','Vintage']:
+        return 'فينتج'
+    elif eng in ['cupcake','Cupcake']:
+        return 'كوب كايك'
+    elif eng in ['operation', 'les operations', 'operations']:
+        return 'المعاملات'
+    elif eng in ['guichet','Guichet']:
+        return 'كيشي'
+    elif eng in ['Devise','devises','Devises','devise']:
+        return 'عملة'
+    elif eng in ['en ligne','online']:
+        return 'إنلين'
+    elif eng in ['réseau','réseaux','le réseau','les réseaux']:
+        return 'الشبكة'
+    elif eng in ['selfie','selfi']:
+        return 'سلفي'
+    elif eng in ['client','le client','clients']:
+        return 'كليان '
+    elif eng in ['paypal']:
+        return 'بيبال'
+    elif eng in ['dossier','le dossier','dossiers','les dossiers']:
+        return 'دوسي'
+    elif eng in ['scan']:
+        return 'سكان'
+    elif eng in ['Crédit','credit','crédit','crédits','credits']:
+        return 'كريدي'
+    elif eng in ['simulation','simulations']:
+        return 'محاكاة'
+    elif eng in ['Art','art']:
+        return 'أرت'
+    elif eng in ['Express','express']:
+        return 'كسبريس'
+    elif eng in ['Cash','cash']:
+        return 'كاش'
+    elif eng in ['goal','Goal']:
+        return 'جول'
+    elif eng in ['telecharger','télecharger']:
+        return 'تيليشارجي'
+    elif eng in ['k7','K7']:
+        return 'ك7'
+    elif eng in ['internet']:
+        return 'انترنيت'
+    elif eng in ['mail','email','un mail','le mail']:
+        return 'ميل'
+    elif eng in ['etape',' les étapes',' étapes','étape']:
+        return 'الخطوات'
+    elif eng in ['Music','music']:
+        return 'ميوزك'
     else:
         k=[]
         s=transliterate_word(eng)
