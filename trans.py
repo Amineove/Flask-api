@@ -653,6 +653,8 @@ def transliterate_ar(eng):
         return 'ميوزك'
     elif eng in ['le','la','les','un','une','des']:
         return ''
+    elif eng in ['cin']:
+        return 'cin'
     else:
         k=[]
         s=transliterate_word(eng)
