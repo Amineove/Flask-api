@@ -659,6 +659,8 @@ def transliterate_ar(eng):
         return 'البنك'
     elif eng in ['lbankalik']:
         return 'لبنكليك'
+    elif eng in ['webpay']:
+        return 'ويب باي'
     else:
         k=[]
         s=transliterate_word(eng)
