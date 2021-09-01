@@ -595,7 +595,7 @@ def transliterate_ar(eng):
         return ' ببيرمي'
     elif eng in ['espece','espéce','espéces','espéce']:
         return 'إيسبيس'
-    elif eng in ['adresse','l\'adresse']:
+    elif eng in ['adresse','adresse']:
         return 'العنوان'
     elif eng in ['radio','Radio']:
         return 'راديو'
@@ -613,7 +613,7 @@ def transliterate_ar(eng):
         return 'كيشي'
     elif eng in ['Devise','devises','Devises','devise']:
         return 'عملة'
-    elif eng in ['en ligne','online']:
+    elif eng in ['en ligne','online','enligne']:
         return 'إنلين'
     elif eng in ['réseau','réseaux','le réseau','les réseaux']:
         return 'الشبكة'
@@ -655,6 +655,8 @@ def transliterate_ar(eng):
         return ''
     elif eng in ['cin']:
         return 'cin'
+    elif eng in ['banque']:
+        return 'البنك'
     else:
         k=[]
         s=transliterate_word(eng)
