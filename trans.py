@@ -617,7 +617,7 @@ def transliterate_ar(eng):
         return 'عملة'
     elif eng in ['en ligne','online','enligne']:
         return 'إنلين'
-    elif eng in ['réseau','réseaux','le réseau','les réseaux']:
+    elif eng in ['réseau','réseaux','le réseau','les réseaux','reseau','reseaux']:
         return 'الشبكة'
     elif eng in ['selfie','selfi']:
         return 'سلفي'
