@@ -598,7 +598,7 @@ def transliterate_ar(eng):
         return ' ببيرمي'
     elif eng in ['espece','espéce','espéces','espéce']:
         return 'إيسبيس'
-    elif eng in ['adresse','adresse']:
+    elif eng in ['adresse','adresse','ladresse']:
         return 'العنوان'
     elif eng in ['radio','Radio']:
         return 'راديو'
