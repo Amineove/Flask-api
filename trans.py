@@ -569,7 +569,7 @@ noise=pd.read_excel('new_noise.xlsx')
 noise=noise[0].tolist()+nbr
 def transliterate_ar(eng):
     eng = eng.lower()
-    eng = eng.replace("'", "").replace('"', "")
+    eng = eng.replace("'", " ").replace('"', "")
     if detect(eng)== 'ar':
         return eng
     elif eng in ['compte','comte']:
