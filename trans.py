@@ -661,6 +661,10 @@ def transliterate_ar(eng):
         return 'لبنكليك'
     elif eng in ['webpay']:
         return 'ويب باي'
+    elif eng in ['appel']:
+        return 'أبيل'
+    elif eng in ['visio']:
+        return 'فيزيو'
     else:
         k=[]
         s=transliterate_word(eng)
